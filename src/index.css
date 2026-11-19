@@ -1,0 +1,191 @@
+@import "tailwindcss";
+@import "@rainbow-me/rainbowkit/styles.css";
+
+@layer base {
+  :root {
+    --concrete: #E7E5E0;
+    --concrete-light: #F2F0EC;
+    --safety-orange: #FF6B1A;
+    --safety-orange-hover: #FF7F3A;
+    --slate-ink: #2B2F36;
+    --steel-gray: #7A828C;
+    --tech-white: #FFFFFF;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--concrete);
+    color: var(--slate-ink);
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--concrete);
+    background-image:
+      linear-gradient(to right, rgba(122, 130, 140, 0.12) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(122, 130, 140, 0.12) 1px, transparent 1px);
+    background-size: 24px 24px;
+    color: var(--slate-ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+}
+
+@layer components {
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .blueprint-card {
+    background-color: #FFFFFF;
+    border: 2px solid #2B2F36;
+    border-radius: 4px;
+    box-shadow: 2px 2px 0px #2B2F36;
+  }
+
+  .blueprint-card-elevated {
+    background-color: #FFFFFF;
+    border: 2px solid #2B2F36;
+    border-radius: 4px;
+    box-shadow: 4px 4px 0px #2B2F36;
+  }
+
+  .blueprint-panel-concrete {
+    background-color: #E7E5E0;
+    border: 2px solid #2B2F36;
+    border-radius: 4px;
+    box-shadow: 2px 2px 0px #2B2F36;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #FF6B1A;
+    color: #2B2F36;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border: 2px solid #2B2F36;
+    border-radius: 4px;
+    box-shadow: 2px 2px 0px #2B2F36;
+    transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 120ms cubic-bezier(0.16, 1, 0.3, 1), background-color 120ms ease;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    background-color: #FF7D38;
+  }
+
+  .btn-primary:active:not(:disabled) {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px #2B2F36;
+  }
+
+  .btn-primary:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #FFFFFF;
+    color: #2B2F36;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border: 2px solid #2B2F36;
+    border-radius: 4px;
+    box-shadow: 2px 2px 0px #2B2F36;
+    transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 120ms cubic-bezier(0.16, 1, 0.3, 1), background-color 120ms ease;
+    cursor: pointer;
+  }
+
+  .btn-secondary:hover:not(:disabled) {
+    background-color: #F4F2EE;
+  }
+
+  .btn-secondary:active:not(:disabled) {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px #2B2F36;
+  }
+
+  .btn-secondary:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+
+  .btn-slate {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #2B2F36;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border: 2px solid #2B2F36;
+    border-radius: 4px;
+    box-shadow: 2px 2px 0px #2B2F36;
+    transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 120ms cubic-bezier(0.16, 1, 0.3, 1), background-color 120ms ease;
+    cursor: pointer;
+  }
+
+  .btn-slate:hover:not(:disabled) {
+    background-color: #3A3F48;
+  }
+
+  .btn-slate:active:not(:disabled) {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px #2B2F36;
+  }
+
+  .btn-slate:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+
+  .blueprint-input {
+    width: 100%;
+    background-color: #FFFFFF;
+    color: #2B2F36;
+    border: 2px solid #2B2F36;
+    border-radius: 4px;
+    padding: 10px 12px;
+    font-size: 14px;
+    transition: box-shadow 120ms ease;
+  }
+
+  .blueprint-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #FF6B1A;
+  }
+
+  .blueprint-input::placeholder {
+    color: #7A828C;
+  }
+
+  .progress-ticks {
+    background-image: repeating-linear-gradient(
+      to right,
+      transparent,
+      transparent calc(10% - 1px),
+      rgba(43, 47, 54, 0.35) calc(10% - 1px),
+      rgba(43, 47, 54, 0.35) 10%
+    );
+  }
+}
